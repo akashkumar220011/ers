@@ -4,6 +4,7 @@
     background-color: rgb(243,243,243);
   }
 </style>
+ <%- include('_header'); %>
 <% if(locals.user && locals.user.role ==='admin') {%>
   <div class="container-fluid p-4 dashboard-container">
     <h1 class="mx-auto text-center">All employees</h1>
