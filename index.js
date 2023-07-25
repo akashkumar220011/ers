@@ -3,6 +3,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser'); // parse cookie header and populate req.cookies
 const bodyParser = require('body-parser'); // parses incoming request bodies (req.body)
 const dotEnv = require('dotenv');
+const port = process.env.PORT || 5000
 dotEnv.config();
 const app = express();
 const db = require('./config/database');
@@ -64,7 +65,7 @@ app.use(customMware.setFlash);
 // use express router
 app.use('/', require('./routes'));
 
-app.listen( 5000, (err) => {
+app.listen( port, (err) => {
   if (err) {
     console.log(`Error in running the server: ${err}`);
   }
